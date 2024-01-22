@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  padding: 0;
+}
+.flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+.list-style {
+  list-style-type: none;
+}
+.link-style {
+  text-decoration: none;
+}
+.container {
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+/***************** navbar ***************/
+#tmdb-navbar {
+  width: 100%;
+  height: 64px;
+  padding: 12px 40px;
+  background-color: rgb(2, 37, 65);
+  color: white;
+}
+.tmdb-navbar__left__menu,
+.tmdb-navbar__right__menu {
+  gap: 30px;
+}
+.tmdb-navbar__left__menu li,
+.tmdb-navbar__right__menu li {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px;
+}
+.tmdb-logo {
+  width: 154px;
+  height: 20px;
+}
+.navbar-plus {
+  font-size: 30px !important;
+  font-weight: 900 !important;
+}
+.navbar-lang {
+  border: 1px solid #fff;
+  border-radius: 3px;
+  padding: 3px 5px !important;
+  font-size: 14px !important;
+}
+.navbar-lang:hover {
+  background-color: #fff;
+  color: rgb(2, 37, 65);
+}
+.navbar-search {
+  width: 28px;
+  height: 28px;
+}
+
+/***************** banner ***************/
+.banner__top,
+.banner__bottom {
+  height: calc(100vh / 2.5);
+  position: relative;
+  background: url("https://media.themoviedb.org/t/p/w1920_and_h600_multi_faces/ctMserH8g2SeOAnCw5gFjdQF8mo.jpg")
+    no-repeat;
+  background-position: center;
+  background-size: cover;
+  isolation: isolate;
+}
+.banner__top::after,
+.banner__bottom::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.7;
+}
+.banner__top__info {
+  z-index: 1000;
+}
+.banner__top,
+.banner__bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+  color: #fff;
+}
+.banner__top__h2 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+}
+.banner__top__h3 {
+  font-size: 32px;
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 30px;
+}
+.banner__search-box {
+  position: relative;
+  height: max-content;
+}
+.banner__search-box__input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: none;
+}
+.banner__search-box__btn {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  padding: 10px 26px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(
+    to right,
+    rgba(30, 213, 169, 1) 0%,
+    rgba(1, 180, 228, 1) 100%
+  );
+  cursor: pointer;
+}
+.banner__search-box__btn:hover {
+  color: rgb(3, 37, 65);
+}
+.banner__bottom__h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  background: -webkit-linear-gradient(#9dcba4, #298af5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.banner__bottom__text {
+  font-size: 20px;
+  margin: 12px 0 20px 0;
+}
+.banner__check__btn {
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+.fa-arrow-right {
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+/***************** trend ***************/
+.trend {
+  width: 100%;
+  padding: 30px 0 20px 0;
+  background: url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg") no-repeat;
+  background-position: 50% 200px;
+  padding-bottom: 500px;
+}
+.scroll{
+  width: 100%;
+  position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.fading{
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right,rgba(255,255,255,0)0,#fff 100%);
+  z-index: 1;
+  pointer-events: none;
+  transition: linear .3s;
+  opacity: 1;
+}
+.is-hidden{
+  transition: linear .3s;
+  opacity: 0;
+}
+.trend__header {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+.trend__header__h2 {
+  font-size: 24px;
+  white-space: nowrap;
+  margin-right: 20px;
+  font-weight: 600;
+}
+.trend__selector {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgb(3, 37, 65);
+  border-radius: 30px;
+  /* padding: 4px 20px; */
+  height: fit-content;
+}
+.trend__selector-btn {
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  padding: 4px 20px;
+  color: rgb(2, 37, 65);
+  position: relative;
+}
+.trend__selector-btn.active::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgb(2, 37, 65);
+  border-radius: 30px;
+}
+.trend__selector-btn.active {
+  background: linear-gradient(to right, #c0fecf 0, #1ed5a9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.trend__posters {
+  padding: 20px 0;
+  display: flex;
+  gap: 20px;
+  margin-left: 40px;
+}
+.trend__poster-card__img {
+  width: 150px;
+  min-width: 150px;
+  height: 225px;
+  position: relative;
+}
+.trend__poster-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.trend__poster-card-img__options{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(174, 179, 176, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.trend__poster-card-img__options:hover{
+  background-color: rgb(0, 182, 234);
+}
+.outer-ring{
+  position: absolute;
+  bottom: -19px;
+  left: 11px;
+
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+}
+
+.trend__poster-card-img__user_score_chart{
+
+  width: 34px;
+  height: 34px;
+  background-color: rgb(7, 28, 34);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+.trend__poster-card__header{
+  padding: 26px 10px 0;
+}
+.trend__poster-card__link{
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+.trend__poster-card__link:hover{
+  color: rgb(0, 182, 234);
+}
+.trend__poster-card__date{
+  font-size: 16px;
+  color: rgba(0,0,0,.6);
+}

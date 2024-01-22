@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Movie</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="CSS/dropdow.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <nav id="tmdb-navbar" class="flex-center-between">
+      <div class="tmdb-navbar__left">
+        <ul class="tmdb-navbar__left__menu flex-center list-style">
+          <li>
+            <img
+              src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+              alt="themoviedb-logo"
+              class="tmdb-logo"
+            />
+          </li>
+          <div class="dropdown" data-dropdown>
+            <li data-dropdown-item>Filmler</li>
+            <div class="dropdown-menu">
+              <div class="dropdown-links">
+                <a href="" class="dropdown-link link-style">Popüler</a>
+                <a href="" class="dropdown-link link-style">Gösterimdekiler</a>
+                <a href="" class="dropdown-link link-style">Yakında</a>
+                <a href="" class="dropdown-link link-style"
+                  >En Fazla Oy Alanlar</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown" data-dropdown>
+            <li data-dropdown-item>Diziler</li>
+            <div class="dropdown-menu">
+              <div class="dropdown-links">
+                <a href="" class="dropdown-link link-style">Popüler</a>
+                <a href="" class="dropdown-link link-style">Günün Programı</a>
+                <a href="" class="dropdown-link link-style">Televizyonda</a>
+                <a href="" class="dropdown-link link-style"
+                  >En Fazla Oy Alanlar</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="dropdown" data-dropdown>
+            <li data-dropdown-item>Kişiler</li>
+            <div class="dropdown-menu">
+              <div class="dropdown-links">
+                <a href="" class="dropdown-link link-style">Popüler Kişiler</a>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown" data-dropdown>
+            <li data-dropdown-item>Daha Fazla</li>
+            <div class="dropdown-menu">
+              <div class="dropdown-links">
+                <a href="" class="dropdown-link link-style">Tartışmalar</a>
+                <a href="" class="dropdown-link link-style">Öne Çıkanlar</a>
+                <a href="" class="dropdown-link link-style">Destek</a>
+                <a href="" class="dropdown-link link-style">API</a>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+      <div class="tmdb-navbar-right">
+        <ul class="tmdb-navbar__right__menu flex-center list-style">
+          <li class="navbar-plus">+</li>
+          <div class="dropdown lang-menu" data-dropdown>
+            <li class="navbar-lang" data-dropdown-item>TR</li>
+            <div class="dropdown-menu">
+              <i class="fa-solid fa-play arrow-up"></i>
+              <div class="lang-link">
+                <h2>Dil Ayarları</h2>
+                <div class="lang-settings">
+                  <label>Varsayılan Dil</label>
+                  <button class="reset-btn">Sıfırla</button>
+                </div>
+                <select
+                  name="default-lang"
+                  id="default-lang-select"
+                  class="default-lang-select"
+                >
+                  <option value="tr">Türkçe(tr-TR)</option>
+                  <option value="en">English(en-US)</option>
+                </select>
+                <label>Geri Dönüş Dili</label>
+                <select name="default-lang" id="default-lang-select">
+                  <option value="en">English(en-US)</option>
+                  <option value="tr">Türkçe(tr-TR)</option>
+                </select>
+                <!-- <button>
+                  <i class="fa-solid fa-arrows-rotate"></i>
+                  SAYFAYI YENİLE
+                </button> -->
+              </div>
+            </div>
+          </div>
+
+          <li>Giriş</li>
+          <li>TMDb'ye Katıl</li>
+          <li>
+            <img
+              src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-28-search-blue-177462d06db81ff2a02aa022c1c0be5ba4200d7bd3f51091ed9298980e3a26a1.svg"
+              class="navbar-search"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="banner" id="banner">
+        <div class="banner__top">
+          <div class="banner__top__info">
+            <div class="header">
+              <h2 class="banner__top__h2">Hoş Geldiniz.</h2>
+              <h3 class="banner__top__h3">
+                Milyonlarca film, TV şovu ve keşfedilecek kişi. Şimdi keşfedin.
+              </h3>
+            </div>
+            <div class="banner__search-box">
+              <input
+                type="search"
+                class="banner__search-box__input"
+                placeholder="Film, dizi, kişi ara..."
+              />
+              <button class="banner__search-box__btn">Search</button>
+            </div>
+          </div>
+        </div>
+        <div class="banner__bottom">
+          <div class="banner__bottom__info">
+            <h2 class="banner__bottom__h2">That's a</h2>
+            <h2 class="banner__bottom__h2">Wrap 2023</h2>
+            <p class="banner__bottom__text">
+              The best (and worst) of the year from TMDB.
+            </p>
+            <button class="banner__check__btn">
+              Check it out!
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="trend scroll">
+        <div class="fading"></div>
+        <div class="trend__header">
+          <h2 class="trend__header__h2">Trend</h2>
+          <div class="trend__selector">
+            <button
+              class="trend__selector__today-btn trend__selector-btn active"
+            >
+              Bugün
+            </button>
+            <button class="trend__selector__thisweek-btn trend__selector-btn">
+              Bu Hafta
+            </button>
+          </div>
+        </div>
+        <div class="trend__posters">
+          <div class="trend__poster-card">
+            <div class="trend__poster-card__img">
+              <img
+                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
+                alt="trend__poster-card__img"
+              />
+              <div class="trend__poster-card-img__options">
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+              <div class="outer-ring">
+                <div class="trend__poster-card-img__user_score_chart">55%</div>
+              </div>
+            </div>
+            <div class="trend__poster-card__header">
+              <a href="#" class="trend__poster-card__link link-style"
+                >The Marvels</a
+              >
+              <p class="trend__poster-card__date">08-11-2023</p>
+            </div>
+          </div>
+          <div class="trend__poster-card">
+            <div class="trend__poster-card__img">
+              <img
+                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
+                alt="trend__poster-card__img"
+              />
+              <div class="trend__poster-card-img__options">
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+              <div class="outer-ring">
+                <div class="trend__poster-card-img__user_score_chart">75%</div>
+              </div>
+            </div>
+            <div class="trend__poster-card__header">
+              <a href="#" class="trend__poster-card__link link-style"
+                >The Marvels</a
+              >
+              <p class="trend__poster-card__date">08-11-2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+    </footer>
+
+    <script src="JS/d&dm.js"></script>
+    <script src="JS/main.js"></script>
+  </body>
+</html>
