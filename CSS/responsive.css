@@ -1,0 +1,26 @@
+@media only screen and (max-width: 1400px) {
+    .container {
+      width: 100% !important;
+    }
+    #tmdb-navbar {
+      padding: 12px 27px !important;
+    }
+    .tmdb-navbar{
+      width: 100% !important;
+    }
+  }
+  @media only screen and (max-width: 960px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+  @media only screen and (max-width: 760px) {
+    body {
+      background-color: pink;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    body {
+      background-color: red;
+    }
+  }
