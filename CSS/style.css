@@ -31,13 +31,26 @@
   height: 100vh;
   margin: 0 auto;
 }
-.scroll {
-  width: 100%;
-  position: relative;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  z-index: 10;
+.card__selector-dropdown{
+  display: none;
 }
+.dropdown-none{
+  display: flex;
+}
+/* .scroll {
+
+
+} */
+
+::-webkit-scrollbar {
+  /* position: relative; */
+  width: 100% !important;
+  z-index: 10;
+  background: #dbdbdb;
+  height: 10px;
+  border-radius: 10px;
+}
+
 .fading {
   width: 60px;
   height: 100%;
@@ -49,7 +62,7 @@
     rgba(255, 255, 255, 0) 0,
     #fff 100%
   );
-  z-index: 1;
+  z-index: 11;
   pointer-events: none;
   transition: linear 0.3s;
   opacity: 1;
@@ -57,6 +70,14 @@
 .is-hidden {
   transition: linear 0.3s;
   opacity: 0;
+}
+.green-card__selector{
+  border-color:  #1fd5a9 !important;
+}
+.bg-green-card__selector__btn.active{
+  background: linear-gradient(to right, #c0fecf 0, #1ed5a9 100%) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #022541 !important;
 }
 /***************** navbar ***************/
 #tmdb-navbar {
@@ -110,6 +131,29 @@
   width: 28px;
   height: 28px;
 }
+.display-none{
+  display: none;
+}
+.responsive-navbar{
+  width: 100%;
+}
+.hamburger-menu i{
+  font-size: 20px;
+}
+.responsive-navbar__tmdb-logo{
+  width: 55px;
+  height: 40px;
+}
+.responsive-navbar__tmdb-logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.responsive-navbar__user i{
+  font-size: 18px;
+  margin-right: 15px;
+}
 
 /***************** banner ***************/
 .banner__top,
@@ -141,7 +185,7 @@
   opacity: 0.7;
 }
 .banner__top__info {
-  z-index: 1000;
+  z-index: 10;
 }
 
 .banner__top__h2 {
@@ -221,7 +265,7 @@
 /***************** trend ***************/
 .trend {
   width: 100%;
-  padding: 30px 0 20px 0;
+  padding: 30px 0 0;
   background: url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg")
     no-repeat;
   background-position: 50% 200px;
@@ -272,6 +316,8 @@
   -webkit-text-fill-color: transparent;
 }
 .section__posters {
+  max-width: 100%;
+  overflow: scroll;
   padding: 20px 0;
   display: flex;
   gap: 20px;
@@ -342,7 +388,7 @@
 /* ****************** trailer **************** */
 .trailers {
   width: 100%;
-  padding: 30px 0 20px 0;
+  padding: 30px 0 0;
   position: relative;
   background: url("https://media.themoviedb.org/t/p/w1920_and_h427_multi_faces/9xvBGz7wYjK5faoeXDIaBB9EYDx.jpg")
     no-repeat;
@@ -371,7 +417,10 @@
   height: 168px;
 }
 .trailers  .poster-card__link, .trailers  .poster-card__date, .trailers  .card__selector-btn {
-  color: #fff !important;
+  color: #fff ;
+}
+.trailers  .card__selector-btn:active{
+  color: rgb(3, 37, 65);
 }
 .trailers .poster-card__header{
   text-align: center;

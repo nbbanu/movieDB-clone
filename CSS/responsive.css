@@ -1,26 +1,34 @@
 @media only screen and (max-width: 1400px) {
-    .container {
-      width: 100% !important;
-    }
-    #tmdb-navbar {
-      padding: 12px 27px !important;
-    }
-    .tmdb-navbar{
-      width: 100% !important;
-    }
+  .container {
+    width: 100% !important;
   }
-  @media only screen and (max-width: 960px) {
-    body {
-      background-color: lightblue;
-    }
+  #tmdb-navbar {
+    padding: 12px 27px !important;
   }
-  @media only screen and (max-width: 760px) {
-    body {
-      background-color: pink;
-    }
+  .tmdb-navbar {
+    width: 100% !important;
   }
-  @media only screen and (max-width: 500px) {
-    body {
-      background-color: red;
-    }
+}
+@media only screen and (max-width: 960px) {
+  .tmdb-navbar__left__menu li,
+  .tmdb-navbar__right__menu li:not(.navbar-lang) {
+    padding: 0 !important;
   }
+}
+@media only screen and (max-width: 800px) {
+  .card__selector-dropdown{
+    display: flex !important;
+  }
+  .dropdown-none{
+    display: none !important;
+  }
+  .display-none{
+    display: flex !important;
+  }
+  
+  .tmdb-navbar {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+}

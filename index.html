@@ -11,8 +11,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="CSS/sidebar.css">
+    <link rel="stylesheet" href="CSS/dropdown.css" />
     <link rel="stylesheet" href="CSS/responsive.css" />
-    <link rel="stylesheet" href="CSS/dropdow.css" />
     <link rel="stylesheet" href="CSS/style.css" />
   </head>
   <body>
@@ -125,6 +126,22 @@
           </ul>
         </div>
       </div>
+    <div class="responsive-navbar flex-center-between display-none ">
+      <div class="hamburger-menu">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="responsive-navbar__tmdb-logo">
+        <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="">
+      </div>
+      <div class="flex-center-between">
+        <div class="responsive-navbar__user">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="responsive-navbar__search navbar-search">
+          <img src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-28-search-blue-177462d06db81ff2a02aa022c1c0be5ba4200d7bd3f51091ed9298980e3a26a1.svg" alt="">
+        </div>
+      </div>
+    </div>
     </nav>
     <div class="container">
       <div class="banner" id="banner">
@@ -160,7 +177,7 @@
           </div>
         </div>
       </div>
-      <div class="trend ">
+      <div class="trend">
         <div class="fading"></div>
         <div class="trend__header section__header">
           <h2 class="trend__header__h2">Trend</h2>
@@ -437,15 +454,35 @@
         </div>
       </div>
       <div class="trailers ">
+        <div class="fading"></div>
         <div class="trailers__header section__header">
-          <h2 class="trailers__header__h2">Son Fragmanlar</h2>
-          <div class="card__selector">
-            <button class="card__selector-btn active">Popüler</button>
-            <button class="card__selector-btn">Yayın Akışı</button>
-            <button class="card__selector-btn">Televizyonda</button>
-            <button class="card__selector-btn">Kiralık</button>
-            <button class="card__selector-btn">Sinemalarda</button>
+          <div class="dropdown-none">
+            <h2 class="trailers__header__h2">Son Fragmanlar</h2>
+            
+            <div class="card__selector green-card__selector">
+              <button class="bg-green-card__selector__btn card__selector-btn active">Popüler</button>
+              <button class="bg-green-card__selector__btn card__selector-btn">Yayın Akışı</button>
+              <button class="bg-green-card__selector__btn card__selector-btn">Televizyonda</button>
+              <button class="bg-green-card__selector__btn card__selector-btn">Kiralık</button>
+              <button class="bg-green-card__selector__btn card__selector-btn">Sinemalarda</button>
+            </div>
           </div>
+      
+            <a class="trailers__header__h2 display-none" >Son Fragmanlar</a>
+            <div class="card__selector green-card__selector">
+              <div class="dropdown card__selector-dropdown" data-dropdown>
+              <li class="list-style"><button class="bg-green-card__selector__btn card__selector-btn active" data-dropdown-item>Popüler</button></li>
+              <div class="dropdown-menu card__selector-dropdown__green ">
+              <a href="#" class="list-style dropdown-link link-style">Popüler</a>
+              <a href="#" class="list-style dropdown-link link-style">Yayın Akışı</a>
+              <a href="#" class="list-style dropdown-link link-style">Televizyonda</a>
+              <a href="#" class="list-style dropdown-link link-style">Kiralık</a>
+              <a href="#" class="list-style dropdown-link link-style">Sinemalarda</a>
+            </div>
+            </div>
+            </div>
+           
+         
         </div>
         <div class="trailers-posters section__posters scroll">
           <div class="trailer__poster-card">
@@ -589,3 +626,4 @@
     <script src="JS/main.js"></script>
   </body>
 </html>
+

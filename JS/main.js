@@ -1,7 +1,7 @@
 document.addEventListener("click", (e) => {
-  if (document.querySelector(".trend__selector .trend__selector-btn.active")) {
+  if (document.querySelector(".card__selector .card__selector-btn.active")) {
     document
-      .querySelector(".trend__selector .trend__selector-btn.active")
+      .querySelector(".card__selector .card__selector-btn.active")
       .classList.remove("active");
   }
   e.target.classList.toggle("active");
@@ -16,27 +16,38 @@ trend.addEventListener("scrollend", () => {
   fading.classList.remove("is-hidden");
 });
 
-// const userScores = document.querySelectorAll(
-//   ".trend__poster-card-img__user_score_chart"
-// );
-// const outerRings = document.querySelectorAll(".outer-ring");
-// score();
-// function score() {
-//   userScores.forEach((scores) => {
-//     let score = +scores.textContent.slice(0, 2);
-//     ringColor(score);
-//   });
-// }
+const outerRings = document.querySelectorAll(".outer-ring");
+const progressValues = document.querySelectorAll(".progress-value");
 
-// function ringColor(score) {
-//   outerRings.forEach((ring) => {
-//     if (score >= 70) {
-//       // console.log(score);
-//       // ring.style.borderColor = "yellow";
-//     } else {
-//       // console.log(score);
-//       // ring.style.borderColor = "red";
-//     }
-//   });
+let i = 0;
+let progressStartValue = 0;
+let progressEndValueArr = [];
 
-// }
+pushProgressValue();
+function pushProgressValue() {
+  progressValues.forEach((value) => {
+    let score = value.textContent;
+
+    progressEndValueArr.push(score);
+  });
+}
+
+let progress = setInterval(() => {
+  progressStartValue++;
+
+  progressValues.forEach((value) => {
+    value.textContent = `${progressStartValue}`;
+    outerRings.forEach((ring) => {
+      // if(progressEndValueArr[i] >= 70){
+
+      // }
+      ring.style.background = `conic-gradient(yellow ${
+        progressStartValue * 3.6
+      }deg, #ededed 0deg)`;
+    });
+  });
+
+  if (progressStartValue == 30) {
+    clearInterval(progress);
+  }
+}, 50);
