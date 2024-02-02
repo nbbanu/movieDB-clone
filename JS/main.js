@@ -51,3 +51,21 @@ let progress = setInterval(() => {
     clearInterval(progress);
   }
 }, 50);
+
+
+
+
+// const progressBarGreen = document.querySelectorAll(".leader__progress-inner-green");
+// const progressGauges= document.querySelectorAll(".all-time__progress-bar__gauge");
+
+// progressGauges.forEach(gauge => {
+//     let gaugeValue = gauge.innerText;
+//     let maxWidth = 44;
+//     let width = (100 * parseFloat(gaugeValue)) / maxWidth;
+
+//     progressBarGreen.forEach(bar => {
+//       bar.style.width = width + "%";
+//     })
+// })
+
+

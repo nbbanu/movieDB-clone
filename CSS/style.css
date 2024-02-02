@@ -31,10 +31,10 @@
   height: 100vh;
   margin: 0 auto;
 }
-.card__selector-dropdown{
+.card__selector-dropdown {
   display: none;
 }
-.dropdown-none{
+.dropdown-none {
   display: flex;
 }
 /* .scroll {
@@ -71,10 +71,10 @@
   transition: linear 0.3s;
   opacity: 0;
 }
-.green-card__selector{
-  border-color:  #1fd5a9 !important;
+.green-card__selector {
+  border-color: #1fd5a9 !important;
 }
-.bg-green-card__selector__btn.active{
+.bg-green-card__selector__btn.active {
   background: linear-gradient(to right, #c0fecf 0, #1ed5a9 100%) !important;
   -webkit-background-clip: text;
   -webkit-text-fill-color: #022541 !important;
@@ -88,7 +88,7 @@
   background: rgb(2, 37, 65);
   color: white;
 }
-.tmdb-navbar{
+.tmdb-navbar {
   width: 92%;
   margin: 0 auto;
   display: flex;
@@ -106,8 +106,8 @@
   font-weight: 600;
   padding: 10px;
 }
-.logo-list{
-  margin-top: 5px ;
+.logo-list {
+  margin-top: 5px;
 }
 .tmdb-logo {
   width: 154px;
@@ -131,26 +131,26 @@
   width: 28px;
   height: 28px;
 }
-.display-none{
+.display-none {
   display: none;
 }
-.responsive-navbar{
+.responsive-navbar {
   width: 100%;
 }
-.hamburger-menu i{
+.hamburger-menu i {
   font-size: 20px;
 }
-.responsive-navbar__tmdb-logo{
+.responsive-navbar__tmdb-logo {
   width: 55px;
   height: 40px;
 }
-.responsive-navbar__tmdb-logo img{
+.responsive-navbar__tmdb-logo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.responsive-navbar__user i{
+.responsive-navbar__user i {
   font-size: 18px;
   margin-right: 15px;
 }
@@ -285,7 +285,7 @@
   padding: 0 40px;
   color: #fff;
 }
-.banner__top{
+.banner__top {
   padding-top: 60px !important;
   padding-bottom: 60px !important;
 }
@@ -397,7 +397,7 @@
   background-size: cover;
   isolation: isolate;
 }
-.trailers::after{
+.trailers::after {
   width: 100%;
   content: "";
   position: absolute;
@@ -409,36 +409,36 @@
 .trailers__header__h2 {
   color: #fff;
 }
-.trailer-card-img{
+.trailer-card-img {
   width: 300px;
   height: 168px;
 }
-.trailers  .poster-card__link, .trailers  .poster-card__date, .trailers  .card__selector-btn {
-  color: #fff ;
+.trailers .poster-card__link,
+.trailers .poster-card__date,
+.trailers .card__selector-btn {
+  color: #fff;
 }
-.trailers  .card__selector-btn:active{
+.trailers .card__selector-btn:active {
   color: rgb(3, 37, 65);
 }
-.trailers .poster-card__header{
+.trailers .poster-card__header {
   text-align: center;
 }
 
 /* *********************** POPULERS ********************* */
-.populers{
+.populers {
   margin-top: 30px;
   position: relative;
 }
 
 /* ************************** FREE ONES ****************** */
-.free-ones{
+.free-ones {
   margin: 30px 0;
   position: relative;
 }
 
 /* ************************** JOİN ****************** */
-.join{
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+.join {
   padding: 30px 40px;
   width: 100%;
   position: relative;
@@ -448,7 +448,11 @@
   background-size: cover;
   isolation: isolate;
 }
-.join::after{
+.join__bottom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.join::after {
   width: 100%;
   content: "";
   position: absolute;
@@ -457,29 +461,32 @@
   background-color: rgb(60, 19, 91);
   opacity: 0.8;
 }
-
-.join__left,.join__right{
-  padding: 20px 0;  
+.join__header {
+  color: #fff;
+}
+.join__left,
+.join__right {
+  padding: 20px 0;
   color: #fff;
 }
 .join__header {
   font-size: 32px;
   font-weight: 700;
-
 }
-.join__text{
+.join__text {
   font-size: 19px;
   margin: 10px 40px 30px 0;
   font-weight: 400;
 }
-.join__text__light{
-  opacity: .7;
+.join__text__light {
+  opacity: 0.7;
   font-style: italic;
 }
-.join__right{
-
+.join__info {
+  opacity: .8;
+  font-size: 16px;
 }
-.join__btn{
+.join__btn {
   padding: 8px 16px;
   background-color: rgb(128, 91, 231);
   color: #fff;
@@ -488,4 +495,27 @@
   border-radius: 5px;
   border: none;
   outline: none;
+}
+
+/* *********************** LEADERBOARDS ********************* */
+.leaderboards{
+  padding: 30px 40px;
+}
+.leader__progress{
+  width: 100%;
+  height: 8px;
+  line-height: 8px;
+  border-radius: 4px;
+  position: relative;
+  background-color: transparent;
+}
+.leader__progress-inner-green{
+  background: linear-gradient(to right,rgba(192,254,207,1) 0%,rgba(30,213,169,1) 100%);
+  position: absolute;
+  inset: 0;
+}
+.leader__progress-inner-red{
+  background: linear-gradient(to right,rgba(253,193,112,1) 0%,rgba(217,59,99,1) 100%);
+  position: absolute;
+  inset: 0;
 }

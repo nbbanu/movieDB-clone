@@ -29,6 +29,10 @@
   .tmdb-navbar {
     display: none !important;
   }
+  .join__bottom {
+    display: flex !important;
+    flex-direction: column;
+  }
 }
 @media only screen and (max-width: 500px) {
 }
