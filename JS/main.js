@@ -55,17 +55,28 @@ let progress = setInterval(() => {
 
 
 
-// const progressBarGreen = document.querySelectorAll(".leader__progress-inner-green");
-// const progressGauges= document.querySelectorAll(".all-time__progress-bar__gauge");
+const progressBarGreen = document.querySelectorAll(".leader__progress-inner-green");
+const progressBarRed = document.querySelectorAll(".leader__progress-inner-red");
+const allTimeProgressGauges= document.querySelectorAll(".all-time__progress-bar__gauge");
+const thisWeekprogressGauges= document.querySelectorAll(".this-week__progress-bar__gauge");
 
-// progressGauges.forEach(gauge => {
-//     let gaugeValue = gauge.innerText;
-//     let maxWidth = 44;
-//     let width = (100 * parseFloat(gaugeValue)) / maxWidth;
+allTimeProgressGauges.forEach(gauge => {
+    let gaugeValue = gauge.innerText;
 
-//     progressBarGreen.forEach(bar => {
-//       bar.style.width = width + "%";
-//     })
-// })
+    progressBarGreen.forEach(bar => {
+      if(gaugeValue < 240){
+        bar.style.width = "40px";
+      }
+      
+    })
+});
+
+thisWeekprogressGauges.forEach(gauge => {
+  let gaugeValue = gauge.innerText;
+  let width = (12.7 * parseFloat(gaugeValue)) / 10 ;
+  progressBarRed.forEach(bar => {
+    bar.style.width = width + "%";
+  });
+})
 
 
