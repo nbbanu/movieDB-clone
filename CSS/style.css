@@ -22,13 +22,15 @@
 }
 .list-style {
   list-style-type: none;
+  cursor: pointer;
 }
 .link-style {
   text-decoration: none;
+  cursor: pointer;
 }
 .container {
   width: 91%;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
 }
 .card__selector-dropdown {
@@ -201,7 +203,8 @@
 }
 .section__posters {
   max-width: 100%;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   padding: 20px 0;
   display: flex;
   gap: 20px;
@@ -483,7 +486,7 @@
   font-style: italic;
 }
 .join__info {
-  opacity: .8;
+  opacity: 0.8;
   font-size: 16px;
 }
 .join__btn {
@@ -498,85 +501,157 @@
 }
 
 /* *********************** LEADERBOARDS ********************* */
-.leaderboards{
+.leaderboards {
   padding: 30px 40px;
 }
-.leaderboards__header{
-  display: flex;
-  align-items: center;
+.leaderboards__header {
   gap: 20px;
 }
-.leaderboards__header__h2{
+.leaderboards__header__h2 {
   font-size: 24px;
   white-space: nowrap;
   font-weight: 600;
 }
-.leaderbord{
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.ranking {
+  gap: 10px;
+}
+.dot-green {
+  background: linear-gradient(
+    to right,
+    rgba(192, 254, 207, 1) 0%,
+    rgba(30, 213, 169, 1) 100%
+  );
+}
+.dot-red {
+  background: linear-gradient(
+    to right,
+    rgba(253, 193, 112, 1) 0%,
+    rgba(217, 59, 99, 1) 100%
+  );
+}
+.ranking-text {
+  font-size: 14.4px;
+  font-weight: 400;
+}
+.leaderbord {
+  width: 100%;
   padding-top: 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap:30px
+  grid-gap: 30px;
 }
-.leader{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  background-color: red;
-}
-.leader__profile{
+.leader__profile {
   width: 56px;
   height: 56px;
+  margin-right: 10px;
 }
-.leader__img{
+.leader__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
-.dot{
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-.ranking{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.dot-green{
-  background: linear-gradient(to right,rgba(192,254,207,1) 0%,rgba(30,213,169,1) 100%);
-}
-.dot-red{
-  background: linear-gradient(to right,rgba(253,193,112,1) 0%,rgba(217,59,99,1) 100%);
-}
-.ranking-text{
-  font-size: 14.4px;
-  font-weight: 400;
-}
-.leader__progress{
+.leader__info {
   width: 100%;
+}
+.leader__name {
+  font-size: 19.2px;
+  font-weight: 600;
+}
+.leader__progress {
+  width: 100%;
+  position: relative;
   height: 8px;
   line-height: 8px;
   border-radius: 4px;
-  position: relative;
   background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+.all-time__progress,
+.this-week__progress {
+  position: relative;
+}
+.leader__progress-inner-green {
+  background: linear-gradient(
+    to right,
+    rgba(192, 254, 207, 1) 0%,
+    rgba(30, 213, 169, 1) 100%
+  );
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+}
+.leader__progress-inner-red {
+  background: linear-gradient(
+    to right,
+    rgba(253, 193, 112, 1) 0%,
+    rgba(217, 59, 99, 1) 100%
+  );
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+}
+.this-week__progress-bar__gauge,
+.all-time__progress-bar__gauge {
+  position: absolute;
+  right: 10px;
+  margin-left: 10px;
+  margin-bottom: 8px;
+  font-size: 14.4px;
+  font-weight: 600;
 }
 
-.leader__progress-inner-green{
-  background: linear-gradient(to right,rgba(192,254,207,1) 0%,rgba(30,213,169,1) 100%);
-  position: absolute;
-  inset: 0;
-  border-radius: 4px;
+/* *********************** FOOTER ********************* */
+.tmdb-footer{
+width: 100%;
+background: rgb(2, 35, 62);
+display: flex;
+align-items: center;
+justify-content: center;
+padding-top: 40px;
+padding-bottom: 80px;
 }
-.leader__progress-inner-red{
-  background: linear-gradient(to right,rgba(253,193,112,1) 0%,rgba(217,59,99,1) 100%);
-  position: absolute;
-  inset: 0;
-  border-radius: 4px;
+.footer__left{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 40px;
 }
-.this-week__progress-bar__gauge, .all-time__progress-bar__gauge{
-  width: 100%;
+.tmdb-footer__logo{
+  cursor: pointer;
+  width: 130px;
+  height: 90px;
+  margin-bottom: 40px;
+}
+.footer__join-btn{
+  cursor: pointer;
+  padding: 8px 16px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: rgb(1,180,228);
+  font-size: 19px;
+  font-weight: 700;
+  background-color: #fff;
+}
+.footer__right{
+  display: flex;
+  color: #fff;
+}
+.footer__list-header{
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+.footer__right li{
+  font-size: 17px;
+}
+.footer__right ul{
+  margin-right: 40px;
 }

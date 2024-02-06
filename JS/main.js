@@ -72,11 +72,15 @@ allTimeProgressGauges.forEach(gauge => {
 });
 
 thisWeekprogressGauges.forEach(gauge => {
-  let gaugeValue = gauge.innerText;
-  let width = (12.7 * parseFloat(gaugeValue)) / 10 ;
+  let gaugeValue = parseFloat(gauge.innerText);
+  let width = (12.7 * gaugeValue);
   progressBarRed.forEach(bar => {
-    bar.style.width = width + "%";
+    bar.style.width = width + "px";
+    if(gaugeValue >= 43){
+      bar.style.width = 490 + "px";
+    }
   });
+ 
 })
 
 

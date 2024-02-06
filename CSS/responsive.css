@@ -33,6 +33,15 @@
     display: flex !important;
     flex-direction: column;
   }
+  .leaderbord{
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .section__header{
+    margin-left: 20px !important;
+  }
+  .section__posters{
+    margin-left: 20px !important;
+  }
 }
 @media only screen and (max-width: 500px) {
 }
