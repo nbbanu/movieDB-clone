@@ -19,6 +19,18 @@
   .card__selector-dropdown{
     display: flex !important;
   }
+  .dropdown-menu{
+    width: 130px !important;
+
+    background: linear-gradient(to right,rgba(192,254,207,1) 0%,rgba(0,213,169,1) 100%);
+  }
+  .dropdown-link{
+    font-weight: 600 !important;
+    font-size: 16px !important;
+  }
+  .dropdown-link:hover:not(.lang-link){
+    background-color: transparent !important;
+  }
   .dropdown-none{
     display: none !important;
   }
@@ -26,12 +38,15 @@
     display: flex !important;
   }
   
-  .tmdb-navbar {
+  .tmdb-navbar, .tmdb-footer__logo{
     display: none !important;
   }
   .join__bottom {
     display: flex !important;
     flex-direction: column;
+  }
+  .leaderboards {
+    padding: 30px 20px !important;
   }
   .leaderbord{
     grid-template-columns: repeat(1, 1fr) !important;
@@ -42,6 +57,24 @@
   .section__posters{
     margin-left: 20px !important;
   }
+  
+  .tmdb-footer{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding-left: 20px;
+  }
+  .footer__join-btn{
+    margin-bottom: 40px !important;
+  }
+  .footer__right{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .footer__right ul{
+    margin-bottom: 40px !important;
+  }
+
 }
 @media only screen and (max-width: 500px) {
 }

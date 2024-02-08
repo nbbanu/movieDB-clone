@@ -13,3 +13,17 @@
 .sidebar.sidebar-active{
     left: 0;
 }
+.sidebar__link-light {
+    color: rgba(255, 255, 255, .6);
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar .sidebar__link{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 20.8px;
+    color: #fff;
+    padding-bottom: 10px ;
+}
