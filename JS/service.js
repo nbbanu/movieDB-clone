@@ -23,3 +23,13 @@ const getTrendMovies = async (type = "day") => {
 
   return data;
 };
+
+const getTrailersMovies = async (type="movie") => {
+    const url = `${type}/popular?language=en-US`;
+    const data = await get(url);
+// const url2 = `watch/providers/regions?language=en-US`;
+// const data2 = await get(url2);
+// console.log(data2)
+    return data;
+}
+

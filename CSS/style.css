@@ -38,10 +38,6 @@
 .dropdown-none {
   display: flex;
 }
-/* .scroll {
-
-
-} */
 
 ::-webkit-scrollbar {
   z-index: 10;
@@ -49,7 +45,21 @@
   height: 10px;
   border-radius: 10px;
 }
+/* card selector fading */
+.fade {
+  animation-name: fade-effect;
+  animation-duration: 1.5s;
+}
 
+@keyframes fade-effect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* section posters fading  */
 .fading {
   width: 60px;
   height: 100%;
@@ -70,6 +80,7 @@
   transition: linear 0.3s;
   opacity: 0;
 }
+
 .green-card__selector {
   border-color: #1fd5a9 !important;
 }
@@ -78,6 +89,10 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: #022541 !important;
 }
+.minus {
+  background-color: red;
+}
+
 /***************** navbar ***************/
 #tmdb-navbar {
   width: 100%;
@@ -413,6 +428,21 @@
 .trailer-card-img {
   width: 300px;
   height: 168px;
+  /* position: relative; */
+}
+.trailer-card-img:hover {
+  transform: scale(1.05);
+}
+.play-btn:hover{
+  transform: scale(1.2);
+}
+.play-btn{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  font-size: 50px;
+  color: #fff;
+  z-index: 10;
 }
 .trailers .poster-card__link,
 .trailers .poster-card__date,
@@ -425,6 +455,8 @@
 .trailers .poster-card__header {
   text-align: center;
 }
+
+
 
 /* *********************** POPULERS ********************* */
 .populers {
@@ -605,51 +637,51 @@
 }
 
 /* *********************** FOOTER ********************* */
-.tmdb-footer{
-width: 100%;
-background: rgb(2, 35, 62);
-display: flex;
-align-items: center;
-justify-content: center;
-padding-top: 40px;
-padding-bottom: 80px;
+.tmdb-footer {
+  width: 100%;
+  background: rgb(2, 35, 62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 80px;
 }
-.footer__left{
+.footer__left {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-right: 40px;
 }
-.tmdb-footer__logo{
+.tmdb-footer__logo {
   cursor: pointer;
   min-width: 130px;
   min-height: 90px;
   margin-bottom: 40px;
 }
-.footer__join-btn{
+.footer__join-btn {
   cursor: pointer;
   padding: 8px 16px;
   border: none;
   outline: none;
   border-radius: 5px;
-  color: rgb(1,180,228);
+  color: rgb(1, 180, 228);
   font-size: 19px;
   font-weight: 700;
   background-color: #fff;
 }
-.footer__right{
+.footer__right {
   display: flex;
   color: #fff;
 }
-.footer__list-header{
+.footer__list-header {
   font-size: 20px;
   line-height: 20px;
   font-weight: 700;
   padding-bottom: 5px;
 }
-.footer__right li{
+.footer__right li {
   font-size: 17px;
 }
-.footer__right ul{
+.footer__right ul {
   margin-right: 40px;
 }
