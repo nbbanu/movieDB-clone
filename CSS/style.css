@@ -249,7 +249,7 @@
   background-color: rgba(174, 179, 176, 0.5);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
   cursor: pointer;
 }
 .poster-card-img__options:hover {
@@ -428,13 +428,17 @@
 .trailers__header__h2 {
   color: #fff;
 }
+
 .trailer-card-img {
-  width: 300px;
+  min-width: 300px;
   height: 168px;
 }
+
 .trailer-card-img:hover{
   transform: scale(1.05);
+  z-index: 1;
 }
+
 .play-btn:hover{
   transform: scale(1.2);
 }
@@ -444,7 +448,6 @@
   position: absolute;
   font-size: 50px;
   color: #fff;
-  z-index: 10;
 }
 .trailers .poster-card__link,
 .trailers .poster-card__date,

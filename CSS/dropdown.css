@@ -4,7 +4,7 @@
 .dropdown-menu {
   width: 180px;
   position: absolute;
-  z-index: 1;
+  z-index: 1; 
   height: fit-content;
   left: 0;
   top: calc(100% + 10px);
@@ -33,6 +33,7 @@
   left: -125px;
   font-size: 14.4px;
   font-weight: 600;
+  z-index: 1;
 }
 .option-dropdown-text{
   padding:0 20px;

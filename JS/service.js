@@ -44,3 +44,10 @@ const getFreeToWatch = async (type = "day") => {
   
   return data;
 }
+
+const getTrailerVideos = async () => {
+  const url = `movie/${movie_id}/videos?language=en-US`;
+  const data = await get(url)
+
+  return data;
+}
