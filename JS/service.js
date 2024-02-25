@@ -17,19 +17,30 @@ const get = async (url) => {
   return data?.results;
 };
 
-const getTrendMovies = async (type = "day") => {
+const getTrends = async (type = "day") => {
   const url = `trending/movie/${type}?language=en-US`;
   const data = await get(url);
 
   return data;
 };
 
-const getTrailersMovies = async (type="movie") => {
-    const url = `${type}/popular?language=en-US`;
-    const data = await get(url);
-// const url2 = `watch/providers/regions?language=en-US`;
-// const data2 = await get(url2);
-// console.log(data2)
-    return data;
+const getTrailers = async (type="movie") => {
+  const url = `${type}/popular?language=en-US`;
+  const data = await get(url);
+
+  return data;
 }
 
+const getPopulars = async (type="tv") => {
+  const url = `${type}/popular?language=en-US`;
+  const data = await get(url);
+
+  return data;
+}
+
+const getFreeToWatch = async (type = "day") => {
+  const url = `trending/movie/${type}?language=en-US`;
+  const data = await get(url);
+  
+  return data;
+}

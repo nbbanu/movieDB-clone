@@ -58,22 +58,23 @@ thisWeekprogressGauges.forEach((gauge) => {
 });
 
 //*********** load movies and series ***************/
+document.addEventListener("DOMContentLoaded", () => {
+  loadTrendsToUI();
+  loadTrailersToUI();
+  loadPopularsToUI();
+  loadFreeToWatchToUI();
+});
 
 //*********** trend movies and series ***************/
 const trendPostersArea = document.querySelector(".trend__posters");
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadTrendsToUI();
-  loadTrailersToUI();
-});
-
 async function loadTrendsToUI(type = "day") {
-  const data = await getTrendMovies(type);
+  const data = await getTrends(type);
 
   trendPostersArea.innerHTML = data
     .map(
       (item) =>
-        `<div class="trend__poster-card fade">
+        `<div class="trend__poster-card  fade">
           <div class="poster-card__img">
             <img
               src="${base_image_path + item.poster_path}"
@@ -122,21 +123,22 @@ async function loadTrendsToUI(type = "day") {
     `
     )
     .join("");
-
 }
 
 //*********** latest trailers movies and series ***************/
 const trailersPostersArea = document.querySelector(".trailers-posters");
+const trailers = document.querySelector(".trailers");
 
 async function loadTrailersToUI(type = "movie") {
-  const data = await getTrailersMovies(type);
+  const data = await getTrailers(type);
 
   trailersPostersArea.innerHTML = data
     .map(
       (item) =>
-        `<div class="trailer__poster-card fade">
-        
-            <div class="poster-card__img trailer-card-img">
+        `<div onmouseenter="changeBackground('${item.backdrop_path}',${
+          item.id
+        })" class="trailer__poster-card  fade">
+            <div  class="poster-card__img trailer-card-img">
             <i class="fa-solid fa-play play-btn"></i>
               <img
                 src="${base_image_path + item.backdrop_path} "
@@ -173,6 +175,99 @@ async function loadTrailersToUI(type = "movie") {
             </div>
           </div>
     `
+    )
+    .join("");
+}
+
+function changeBackground(image, id) {
+  trailers.style.background = `url(${
+    base_image_path + image
+  }) no-repeat center`;
+  trailers.style.backgroundSize = "cover";
+}
+
+//*********** populers movies and series ***************/
+const popularsPostersArea = document.querySelector(".populers__posters");
+
+async function loadPopularsToUI(type = "movie") {
+  const data = await getPopulars(type);
+
+  popularsPostersArea.innerHTML = data
+    .map((item) => {
+      return `
+          <a href="detail.html?id=test-deneme">
+              <div class="populer__poster-card fade">
+              <div class="poster-card__img">
+                <img
+                  src="${base_image_path + item.poster_path}"
+                  alt="trend__poster-card__img"
+                />
+                <div class="poster-card-img__options">
+                  <i class="fa-solid fa-ellipsis"></i>
+                </div>
+                <div class="outer-ring flex-center-center"
+                style="background:conic-gradient(${
+                  item.vote_average < 7 ? "yellow" : "green"
+                } ${item.vote_average * 36}deg, #ededed 0deg)">
+                  <div
+                    class="poster-card-img__user_score_chart flex-center-center"
+                  >
+                    <span class="progress-value">${Math.round(
+                      item.vote_average * 10
+                    )}</span>%
+                  </div>
+                </div>
+              </div>
+              <div class="poster-card__header">
+                <a href="#" class="poster-card__link link-style">${
+                  item.title
+                }</a>
+                <p class="poster-card__date">${item.release_date}</p>
+              </div>
+            </div>
+          </a>
+    `;
+    })
+    .join("");
+}
+
+//*********** free movies and series ***************/
+const freeToWatchArea = document.querySelector(".free-ones__posters");
+
+async function loadFreeToWatchToUI(type = "day") {
+  const data = await getFreeToWatch(type);
+
+  freeToWatchArea.innerHTML = data
+    .map(
+      (item) =>
+        ` <div class="free-one__poster-card fade">
+  <div class="poster-card__img">
+    <img
+      src="${base_image_path + item.poster_path}"
+      alt="trend__poster-card__img"
+    />
+    <div class="poster-card-img__options">
+      <i class="fa-solid fa-ellipsis"></i>
+    </div>
+    <div class="outer-ring flex-center-center"
+    style="background:conic-gradient(${
+      item.vote_average < 7 ? "yellow" : "green"
+    } ${item.vote_average * 36}deg, #ededed 0deg)">
+      <div
+        class="poster-card-img__user_score_chart flex-center-center"
+      >
+        <span class="progress-value">
+        <span class="progress-value">${Math.round(
+          item.vote_average * 10
+        )}</span>%
+      </div>
+    </div>
+  </div>
+  <div class="poster-card__header">
+    <a href="#" class="poster-card__link link-style">${item.title}</a>
+    <p class="poster-card__date">${item.release_date}</p>
+  </div>
+</div>`
     )
     .join("");
 }

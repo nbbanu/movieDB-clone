@@ -269,8 +269,9 @@
               >
                 Kiralık
               </button>
-              <button class="bg-green-card__selector__btn card__selector-btn"
-              onclick=""
+              <button
+                class="bg-green-card__selector__btn card__selector-btn"
+                onclick=""
               >
                 Sinemalarda
               </button>
@@ -312,13 +313,12 @@
         </div>
         <div class="trailers-posters section__posters">
           <!-- Dinamik eklenecek -->
-          <div class="no-section__posters-data display-none">
+          <!-- <div class="no-section__posters-data display-none">
             <p class="no-section__posters-data__text">
               Bu panel herhangi bir sonuç döndürmedi. Yenilemeyi deneyin.
             </p>
-          </div>
+          </div> -->
         </div>
-       
       </section>
       <section class="populers">
         <div class="fading"></div>
@@ -326,10 +326,30 @@
           <div class="dropdown-none">
             <h2 class="section__header__h2">Popüler Olanlar</h2>
             <div class="card__selector">
-              <button class="card__selector-btn active">Yayın Akışı</button>
-              <button class="card__selector-btn">Televizyonda</button>
-              <button class="card__selector-btn">Kiralık</button>
-              <button class="card__selector-btn">Sinemalarda</button>
+              <button
+                class="card__selector-btn active"
+                onclick="loadPopularsToUI('movie')"
+              >
+                Yayın Akışı
+              </button>
+              <button
+                class="card__selector-btn"
+                onclick="loadPopularsToUI('tv')"
+              >
+                Televizyonda
+              </button>
+              <button
+                class="card__selector-btn"
+                onclick="loadPopularsToUI('movie')"
+              >
+                Kiralık
+              </button>
+              <button
+                class="card__selector-btn"
+                onclick="loadPopulersToUI('tv')"
+              >
+                Sinemalarda
+              </button>
             </div>
           </div>
 
@@ -364,182 +384,7 @@
           </div>
         </div>
         <div class="populers__posters section__posters">
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
+          <!-- Dinamik eklenecek  -->
         </div>
       </section>
       <section class="free-ones">
@@ -549,12 +394,22 @@
           <div class="dropdown-none">
             <h2 class="section__header__h2">İzlemek Ücretsiz</h2>
             <div class="card__selector">
-              <button class="card__selector-btn active">Filmler</button>
-              <button class="card__selector-btn">TV</button>
+              <button
+                class="card__selector-btn active"
+                onclick="loadFreeToWatchToUI('day')"
+              >
+                Filmler
+              </button>
+              <button
+                class="card__selector-btn"
+                onclick="loadFreeToWatchToUI('week')"
+              >
+                TV
+              </button>
             </div>
           </div>
 
-          <a class="populers__header__h2 section__header__h2 display-none">
+          <a class="free-ones__header__h2 section__header__h2 display-none">
             İzlemek Ücretsiz</a
           >
           <div class="card__selector green-card__selector">
@@ -576,184 +431,8 @@
             </div>
           </div>
         </div>
-
-        <div class="populers__posters section__posters">
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
-          <div class="populer__poster-card">
-            <div class="poster-card__img">
-              <img
-                src="https://media.themoviedb.org/t/p/w440_and_h660_face/l4ffTnCpcVgjF6TeKMtOIKTRdxG.jpg"
-                alt="trend__poster-card__img"
-              />
-              <div class="poster-card-img__options">
-                <i class="fa-solid fa-ellipsis"></i>
-              </div>
-              <div class="outer-ring flex-center-center">
-                <div
-                  class="poster-card-img__user_score_chart flex-center-center"
-                >
-                  <span class="progress-value"></span>%
-                </div>
-              </div>
-            </div>
-            <div class="poster-card__header">
-              <a href="#" class="poster-card__link link-style">The Marvels</a>
-              <p class="poster-card__date">08-11-2023</p>
-            </div>
-          </div>
+        <div class="free-ones__posters section__posters">
+          <!-- dinamik eklenecek  -->
         </div>
       </section>
       <section class="join">
@@ -998,8 +677,8 @@
       </div>
     </footer>
 
-    <script src="JS/config.js"></script>
     <script src="JS/service.js"></script>
+    <script src="JS/config.js"></script>
     <script src="JS/sidebar.js"></script>
     <script src="JS/d&dm.js"></script>
     <script src="JS/main.js"></script>
