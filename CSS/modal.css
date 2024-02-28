@@ -1,18 +1,12 @@
 .modal{
     width: 90%;
     height: 90vh;
-    background: rgb(20, 189, 172);
+    background-color: black;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding:40px 50px;
     font-size: 20px;
-    font-weight: 600;
-    gap: 10px;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px 12px rgb(20, 189, 172);
-    position: absolute;
+    position: fixed;
     /* top: 50%; */
     top: 0;
     left: 50%;
@@ -20,7 +14,22 @@
     transform: translate(-50%,-50%) scale(0.1);
     transition: transform .4s top .4s;
     visibility: hidden;
-    z-index: 99;
+  }
+  .modal__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  .modal__header__h2{
+    color: #fff;
+    font-weight: 400;
+  }
+  .close-modal-btn{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+    background-color: transparent;
   }
   .open-modal{
     top: 50%;

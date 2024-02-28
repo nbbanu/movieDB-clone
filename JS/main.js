@@ -1,15 +1,20 @@
 const fading = document.querySelector(".fading");
-const progressBarGreen = document.querySelectorAll(".leader__progress-inner-green");
+const progressBarGreen = document.querySelectorAll(
+  ".leader__progress-inner-green"
+);
 const progressBarRed = document.querySelectorAll(".leader__progress-inner-red");
-const allTimeProgressGauges = document.querySelectorAll(".all-time__progress-bar__gauge");
-const thisWeekprogressGauges = document.querySelectorAll(".this-week__progress-bar__gauge");
+const allTimeProgressGauges = document.querySelectorAll(
+  ".all-time__progress-bar__gauge"
+);
+const thisWeekprogressGauges = document.querySelectorAll(
+  ".this-week__progress-bar__gauge"
+);
 const trend = document.querySelector(".trend");
 const trendPostersArea = document.querySelector(".trend__posters");
 const trailersPostersArea = document.querySelector(".trailers-posters");
 const trailers = document.querySelector(".trailers");
 const popularsPostersArea = document.querySelector(".populers__posters");
 const freeToWatchArea = document.querySelector(".free-ones__posters");
-
 
 //*********** card selector  ***************/
 document.addEventListener("click", (e) => {
@@ -62,7 +67,6 @@ thisWeekprogressGauges.forEach((gauge) => {
     }
   });
 });
-
 
 //*********** trend movies and series ***************/
 async function loadTrendsToUI(type = "day") {
@@ -131,16 +135,12 @@ async function loadTrailersToUI(type = "movie") {
       (item) =>
         `<div onmouseenter="changeBackground('${item.backdrop_path}')" 
         class="trailer__poster-card  fade">
-        <div class="trailers__modal modal">
-            <div class="modal__header">
-              <h2 class="modal__header__h2">Deneme</h2>
-              <div class="close-modal-btn">x</div>
-            </div>
-            <div class="thumbnail-image"></div>
-           </div>
+         <div class="trailers__modal modal">
+            
+          </div>
             <div  class="poster-card__img trailer-card-img">
             <i class="fa-solid fa-play play-btn"
-            onclick="openTrailerModal('${item.id}')"
+            onclick="openTrailerModal('${item.id}','${item.title}')"
             ></i>
               <img
                 src="${base_image_path + item.backdrop_path} "
@@ -181,28 +181,41 @@ async function loadTrailersToUI(type = "movie") {
 }
 
 function changeBackground(image) {
-
   trailers.style.background = `url(${
     base_image_path + image
   }) no-repeat center`;
   trailers.style.backgroundSize = "cover";
 }
 
-function openTrailerModal(id) {
-  
+async function openTrailerModal(id, title) {
+  const data = await getTrailerVideos(id);
   const modal = document.querySelector(".modal");
 
   modal.classList.add("open-modal");
 
-  
+  modal.innerHTML = `
+        
+        <div class="modal__header">
+              <h2 class="modal__header__h2">${title}</h2>
+              <div  class="close-modal-btn"
+              onclick="closeTrailerModal()">
+              x</div>
+            </div>
+            <div class="thumbnail-image">
+            <video width="100%" height="90%" 
+            controls
+            poster=""
+            >
+                <source src="https://www.youtube.com/embed/${data[0].key}">
+            </video>
+            </div>
+  `;
 }
-// function closeTrailerModal(id) {
-//   console.log(+id)
-//   const closeModalBtn = document.querySelector(".close-modal-btn");
 
-//   modal.classList.remove("open-modal");
-
-// }
+function closeTrailerModal() {
+  const modal = document.querySelector(".modal");
+  modal.classList.remove("open-modal");
+}
 
 //*********** populers movies and series ***************/
 async function loadPopularsToUI(type = "movie") {
