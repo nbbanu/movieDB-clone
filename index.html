@@ -11,13 +11,27 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="CSS/modal.css">
+    <link rel="stylesheet" href="CSS/modal.css" />
     <link rel="stylesheet" href="CSS/sidebar.css" />
     <link rel="stylesheet" href="CSS/dropdown.css" />
     <link rel="stylesheet" href="CSS/responsive.css" />
     <link rel="stylesheet" href="CSS/style.css" />
   </head>
   <body>
+    <div class="modal">
+      <div class="modal__header">
+        <h2 class="modal__header__h2"></h2>
+        <div class="close-modal-btn" onclick="closeTrailerModal()">x</div>
+      </div>
+      <iframe
+        width="100%"
+        height="100%"
+        src=""
+        class="youtube-frame"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
     <nav id="tmdb-navbar" class="flex-center-between">
       <div class="tmdb-navbar">
         <div class="tmdb-navbar__left">
@@ -682,6 +696,7 @@
     <script src="JS/config.js"></script>
     <script src="JS/sidebar.js"></script>
     <script src="JS/d&dm.js"></script>
+    <script src="JS/detail.js"></script>
     <script src="JS/main.js"></script>
   </body>
 </html>

@@ -14,7 +14,7 @@ const get = async (url) => {
   const res = await fetch(request_url, options);
   const data = await res.json();
 
-  return data?.results;
+  return data?.results ? data?.results : data;
 };
 
 const getTrends = async (type = "day") => {
@@ -51,3 +51,12 @@ const getTrailerVideos = async (movie_id) => {
 
   return data;
 }
+
+const getMovieDetail = async(movie_id) => {
+  const url = `movie/${movie_id}`;
+  const data = await get(url);
+
+  console.log(data)
+  return data;
+}
+

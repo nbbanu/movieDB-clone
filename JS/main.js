@@ -77,10 +77,11 @@ async function loadTrendsToUI(type = "day") {
       (item) =>
         `<div class="trend__poster-card  fade">
           <div class="poster-card__img">
-            <img
+          <a href="detail.html?id=${item.id}"><img
               src="${base_image_path + item.poster_path}"
               alt="trend__poster-card__img"
             />
+           </a>
             <div class="poster-card-img__options">
               <div class="dropdown" data-dropdown>
                 <i class="fa-solid fa-ellipsis" data-dropdown-item></i>
@@ -115,7 +116,9 @@ async function loadTrendsToUI(type = "day") {
           </div>
           
           <div class="poster-card__header">
-            <a href="#" class="poster-card__link link-style">
+            <a href="detail.html?id=${
+              item.id
+            }" class="poster-card__link link-style">
               ${item.title}
             </a>
             <p class="poster-card__date">${item.release_date}</p>
@@ -135,13 +138,10 @@ async function loadTrailersToUI(type = "movie") {
       (item) =>
         `<div onmouseenter="changeBackground('${item.backdrop_path}')" 
         class="trailer__poster-card  fade">
-         <div class="trailers__modal modal">
-            
-          </div>
-            <div  class="poster-card__img trailer-card-img">
+          <div  class="poster-card__img trailer-card-img">
             <i class="fa-solid fa-play play-btn"
-            onclick="openTrailerModal('${item.id}','${item.title}')"
-            ></i>
+            onclick="openTrailerModal('${item.id}','${item.title}')">
+            </i>
               <img
                 src="${base_image_path + item.backdrop_path} "
                 alt="trailer__poster-card__img"
@@ -190,26 +190,11 @@ function changeBackground(image) {
 async function openTrailerModal(id, title) {
   const data = await getTrailerVideos(id);
   const modal = document.querySelector(".modal");
+  document.querySelector(".modal__header__h2").innerHTML = title;
+  const video = document.querySelector(".youtube-frame");
 
+  video.setAttribute('src', `https://www.youtube.com/embed/${data[0].key}`)
   modal.classList.add("open-modal");
-
-  modal.innerHTML = `
-        
-        <div class="modal__header">
-              <h2 class="modal__header__h2">${title}</h2>
-              <div  class="close-modal-btn"
-              onclick="closeTrailerModal()">
-              x</div>
-            </div>
-            <div class="thumbnail-image">
-            <video width="100%" height="90%" 
-            controls
-            poster=""
-            >
-                <source src="https://www.youtube.com/embed/${data[0].key}">
-            </video>
-            </div>
-  `;
 }
 
 function closeTrailerModal() {
@@ -224,13 +209,13 @@ async function loadPopularsToUI(type = "movie") {
   popularsPostersArea.innerHTML = data
     .map((item) => {
       return `
-          <a href="detail.html?id=test-deneme">
+          
               <div class="populer__poster-card fade">
               <div class="poster-card__img">
-                <img
+              <a href="detail.html?id=${item.id}"><img
                   src="${base_image_path + item.poster_path}"
                   alt="trend__poster-card__img"
-                />
+                /> </a>
                 <div class="poster-card-img__options">
                 <div class="dropdown" data-dropdown>
                   <i class="fa-solid fa-ellipsis" data-dropdown-item></i>
@@ -265,13 +250,13 @@ async function loadPopularsToUI(type = "movie") {
                 </div>
               </div>
               <div class="poster-card__header">
-                <a href="#" class="poster-card__link link-style">${
-                  item.title
-                }</a>
+                <a href="detail.html?id=${
+                  item.id
+                }" class="poster-card__link link-style">${item.title}</a>
                 <p class="poster-card__date">${item.release_date}</p>
               </div>
             </div>
-          </a>
+         
     `;
     })
     .join("");
@@ -286,10 +271,11 @@ async function loadFreeToWatchToUI(type = "day") {
       (item) =>
         ` <div class="free-one__poster-card fade">
   <div class="poster-card__img">
-    <img
+  <a href="detail.html?id=${item.id}"><img
       src="${base_image_path + item.poster_path}"
       alt="trend__poster-card__img"
     />
+    </a>
     <div class="poster-card-img__options">
     <div class="dropdown" data-dropdown>
       <i class="fa-solid fa-ellipsis" data-dropdown-item></i>
@@ -325,7 +311,9 @@ async function loadFreeToWatchToUI(type = "day") {
     </div>
   </div>
   <div class="poster-card__header">
-    <a href="#" class="poster-card__link link-style">${item.title}</a>
+    <a href="detail.html?${item.id}=${
+          item.title
+        }" class="poster-card__link link-style">${item.title}</a>
     <p class="poster-card__date">${item.release_date}</p>
   </div>
 </div>`

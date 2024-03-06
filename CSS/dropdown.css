@@ -122,3 +122,13 @@
   margin-bottom: 16px;
 }
 
+.tooltip_dropdown-menu{
+  min-width: 300px !important;
+  background-color: rgb(3,37,65) !important;
+  padding: 14px  !important;
+  color: #fff !important;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%) !important;
+
+}

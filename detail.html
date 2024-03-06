@@ -1,11 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="CSS/modal.css" />
+    <link rel="stylesheet" href="CSS/sidebar.css" />
+    <link rel="stylesheet" href="CSS/dropdown.css" />
+    <link rel="stylesheet" href="CSS/responsive.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/detail.css" />
     <title>Document</title>
-</head>
-<body>
-    detail sayfası
-</body>
+  </head>
+  <body>
+    <nav id="tmdb-navbar" class="flex-center-between">
+      <div class="tmdb-navbar">
+        <div class="tmdb-navbar__left">
+          <ul class="tmdb-navbar__left__menu flex-center list-style">
+            <li class="logo-list">
+              <a href="/">
+                <img
+                  src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+                  alt="themoviedb-logo"
+                  class="tmdb-logo"
+                />
+              </a>
+            </li>
+            <div class="dropdown" data-dropdown>
+              <li data-dropdown-item>Filmler</li>
+              <div class="dropdown-menu">
+                <div class="dropdown-links">
+                  <a href="" class="dropdown-link link-style">Popüler</a>
+                  <a href="" class="dropdown-link link-style"
+                    >Gösterimdekiler</a
+                  >
+                  <a href="" class="dropdown-link link-style">Yakında</a>
+                  <a href="" class="dropdown-link link-style"
+                    >En Fazla Oy Alanlar</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="dropdown" data-dropdown>
+              <li data-dropdown-item>Diziler</li>
+              <div class="dropdown-menu">
+                <div class="dropdown-links">
+                  <a href="" class="dropdown-link link-style">Popüler</a>
+                  <a href="" class="dropdown-link link-style">Günün Programı</a>
+                  <a href="" class="dropdown-link link-style">Televizyonda</a>
+                  <a href="" class="dropdown-link link-style"
+                    >En Fazla Oy Alanlar</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="dropdown" data-dropdown>
+              <li data-dropdown-item>Kişiler</li>
+              <div class="dropdown-menu">
+                <div class="dropdown-links">
+                  <a href="" class="dropdown-link link-style"
+                    >Popüler Kişiler</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="dropdown" data-dropdown>
+              <li data-dropdown-item>Daha Fazla</li>
+              <div class="dropdown-menu">
+                <div class="dropdown-links">
+                  <a href="" class="dropdown-link link-style">Tartışmalar</a>
+                  <a href="" class="dropdown-link link-style">Öne Çıkanlar</a>
+                  <a href="" class="dropdown-link link-style">Destek</a>
+                  <a href="" class="dropdown-link link-style">API</a>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <div class="tmdb-navbar-right">
+          <ul class="tmdb-navbar__right__menu flex-center list-style">
+            <li class="navbar-plus">+</li>
+            <div class="dropdown lang-menu" data-dropdown>
+              <li class="navbar-lang" data-dropdown-item>TR</li>
+              <div class="dropdown-menu">
+                <i class="fa-solid fa-play arrow-up"></i>
+                <div class="lang-link">
+                  <h2>Dil Ayarları</h2>
+                  <div class="lang-settings">
+                    <label>Varsayılan Dil</label>
+                    <button class="reset-btn">Sıfırla</button>
+                  </div>
+                  <select
+                    name="default-lang"
+                    id="default-lang-select"
+                    class="default-lang-select"
+                  >
+                    <option value="tr">Türkçe(tr-TR)</option>
+                    <option value="en">English(en-US)</option>
+                  </select>
+                  <label>Geri Dönüş Dili</label>
+                  <select name="default-lang" id="default-lang-select">
+                    <option value="en">English(en-US)</option>
+                    <option value="tr">Türkçe(tr-TR)</option>
+                  </select>
+                  <!-- <button>
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    SAYFAYI YENİLE
+                  </button> -->
+                </div>
+              </div>
+            </div>
+
+            <li>Giriş</li>
+            <li>TMDb'ye Katıl</li>
+            <li>
+              <img
+                src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-28-search-blue-177462d06db81ff2a02aa022c1c0be5ba4200d7bd3f51091ed9298980e3a26a1.svg"
+                class="navbar-search"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="responsive-navbar flex-center-between display-none">
+        <div class="hamburger-menu">
+          <i class="fa-solid fa-bars menu"></i>
+        </div>
+
+        <div class="responsive-navbar__tmdb-logo">
+          <img
+            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+            alt=""
+          />
+        </div>
+        <div class="flex-center-between">
+          <div class="responsive-navbar__user">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="responsive-navbar__search navbar-search">
+            <img
+              src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-28-search-blue-177462d06db81ff2a02aa022c1c0be5ba4200d7bd3f51091ed9298980e3a26a1.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="sidebar">
+          <ul class="list-style">
+            <li><a href="#" class="link-style sidebar__link">Filmler</a></li>
+            <li><a href="#" class="link-style sidebar__link">Diziler</a></li>
+            <li><a href="#" class="link-style sidebar__link">Kişiler</a></li>
+            <li>
+              <a href="#" class="link-style sidebar__link-light"
+                >Katılım Başvuru Kitabı</a
+              >
+            </li>
+            <li>
+              <a href="#" class="link-style sidebar__link-light"
+                >Öne Çıkanlar</a
+              >
+            </li>
+            <li><a href="#" class="link-style sidebar__link-light">API</a></li>
+            <li>
+              <a href="#" class="link-style sidebar__link-light">Destek</a>
+            </li>
+            <li>
+              <a href="#" class="link-style sidebar__link-light">Hakkında</a>
+            </li>
+            <li>
+              <a href="#" class="link-style sidebar__link-light">Giriş</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="shortcut_bar">
+      <ul class="shortcut_bar-list list-style">
+        <div class="dropdown" data-dropdown>
+          <li
+            data-dropdown-item
+            style="border-bottom: 4px solid rgb(1, 180, 228)"
+          >
+            Overview <i class="fa-solid fa-caret-down"></i>
+          </li>
+          <div class="dropdown-menu">
+            <div class="dropdown-links">
+              <a href="" class="dropdown-link link-style">Main</a>
+              <a href="" class="dropdown-link link-style">Alternative Titles</a>
+              <a href="" class="dropdown-link link-style">Cast & Crew</a>
+              <a href="" class="dropdown-link link-style">Release Date</a>
+              <a href="" class="dropdown-link link-style">Translations</a>
+              <a href="" class="dropdown-link link-style">Changes</a>
+              <a href="" class="dropdown-link link-style">Report</a>
+              <a href="" class="dropdown-link link-style">Edit</a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown" data-dropdown>
+          <li data-dropdown-item>
+            Media
+            <i class="fa-solid fa-caret-down"></i>
+          </li>
+          <div class="dropdown-menu">
+            <div class="dropdown-links">
+              <a href="" class="dropdown-link link-style">Backdrops</a>
+              <a href="" class="dropdown-link link-style">Logos</a>
+              <a href="" class="dropdown-link link-style">Posters</a>
+              <a href="" class="dropdown-link link-style">Videos</a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown" data-dropdown>
+          <li data-dropdown-item>
+            Fandom
+            <i class="fa-solid fa-caret-down"></i>
+          </li>
+          <div class="dropdown-menu">
+            <div class="dropdown-links">
+              <a href="" class="dropdown-link link-style">Discussions</a>
+              <a href="" class="dropdown-link link-style">Reviews</a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown" data-dropdown>
+          <li data-dropdown-item>
+            Share
+            <i class="fa-solid fa-caret-down"></i>
+          </li>
+          <div class="dropdown-menu">
+            <div class="dropdown-links">
+              <a href="" class="dropdown-link link-style">Share Link</a>
+              <a href="" class="dropdown-link link-style">Facebook</a>
+              <a href="" class="dropdown-link link-style">Tweet</a>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </section>
+    <section class="main-movie">
+      <div class="flex-center">
+        <div class="movie-poster">
+          <img
+            src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg"
+            alt=""
+          />
+        </div>
+        <div class="movie-details">
+          <div class="movie-detail_header">
+            <h2 class="movie-detail_header-h2 text-hover">
+              Poor Things <span class="movie-detail_header-year">(2023)</span>
+            </h2>
+          </div>
+          <div class="movie-detail_facts flex-center">
+            <span class="certification">18+</span>
+            <span class="release">02/09/2024 (TR)</span>
+            <span class="detail-dot"></span>
+            <span class="genres"
+              ><span class="genre text-hover">Science Fiction</span>,
+              <span class="genre text-hover">Romance</span>,
+              <span class="genre text-hover">Comedy</span>
+            </span>
+            <span class="detail-dot"></span>
+            <span class="runtime">2h 21m</span>
+          </div>
+          <div class="movie-detail_actions">
+            <ul class="movie-detail_actions-list list-style flex-center">
+              <li class="flex-center link-style">
+                <div>circle</div>
+                <div class="user-score">
+                  <p>User</p>
+                  <p>Score</p>
+                </div>
+              </li>
+              <li
+                class="tooltip dropdown tooltip_list"
+                data-dropdown
+                data-dropdown-item
+              >
+                <i class="fa-solid fa-list tooltip-icon" data-dropdown-item>
+                  <div class="display-none add-to-list tooltip_hover">
+                    <i class="fa-solid fa-play arrow-up dark-arrow-up"></i>
+                    <p>Add to list</p>
+                  </div>
+                </i>
+                <div class="dropdown-menu tooltip_dropdown-menu">
+                  <i class="fa-solid fa-play arrow-up dark-arrow-up"></i>
+                  <div class="tooltip_dropdown-header">
+                    <i class="fa-solid fa-plus tooltip_dropdown-plus-icon"></i>
+                    <a href="#" class="tooltip_dropdown-header-text link-style"
+                      >Create New List</a
+                    >
+                  </div>
+                  <span class="tooltip_dropdown-text">
+                    Add Poor Things to one of your lists
+                    <i class="fa-solid fa-caret-down"></i>
+                  </span>
+                </div>
+              </li>
+
+              <li class="tooltip tooltip_heart">
+                <i class="fa-solid fa-heart tooltip-icon">
+                  <div class="display-none mark-favorite tooltip_hover">
+                    <i class="fa-solid fa-play arrow-up dark-arrow-up"></i>
+                    <p>Mark as favorite</p>
+                  </div>
+                </i>
+              </li>
+              <li class="tooltip tooltip_bookmark">
+                <i class="fa-solid fa-bookmark tooltip-icon">
+                  <div class="display-none add-watchlist tooltip_hover">
+                    <i class="fa-solid fa-play arrow-up dark-arrow-up"></i>
+                    <p>Add to your watchlist</p>
+                  </div>
+                </i>
+              </li>
+              <li
+                class="tooltip tooltip_star dropdown"
+                data-dropdown
+                data-dropdown-item
+              >
+                <i class="fa-solid fa-star tooltip-icon" data-dropdown-item>
+                  <div class="display-none rate tooltip_hover">
+                    <i class="fa-solid fa-play arrow-up dark-arrow-up"></i>
+                    <p>Rate it!</p>
+                  </div>
+                </i>
+                <div class="dropdown-menu tooltip_dropdown-menu">
+                  <i class="fa-solid fa-play arrow-up dark-arrow-up"></i>
+                  <div class="flex-center">
+                    <i class="fa-solid fa-minus delete-icon"></i>
+                    <div class="stars">
+                      <span class="star"
+                        ><i class="fa-regular fa-star"></i
+                      ></span>
+                      <span class="star"
+                        ><i class="fa-regular fa-star"></i
+                      ></span>
+                      <span class="star"
+                        ><i class="fa-regular fa-star"></i
+                      ></span>
+                      <span class="star"
+                        ><i class="fa-regular fa-star"></i
+                      ></span>
+                      <span class="star"
+                        ><i class="fa-regular fa-star"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="tooltip_play flex-center text-hover">
+                <div class="play-trailer">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <p class="play-trailer_text">Play Trailer</p>
+                <div></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="JS/service.js"></script>
+    <script src="JS/config.js"></script>
+    <script src="JS/sidebar.js"></script>
+    <script src="JS/d&dm.js"></script>
+    <script src="JS/detail.js"></script>
+  </body>
 </html>
