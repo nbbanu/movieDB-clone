@@ -55,8 +55,7 @@ const getTrailerVideos = async (movie_id) => {
 const getMovieDetail = async(movie_id) => {
   const url = `movie/${movie_id}`;
   const data = await get(url);
-
-  console.log(data)
+  
   return data;
 }
 

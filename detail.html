@@ -245,35 +245,29 @@
       </ul>
     </section>
     <section class="main-movie">
-      <div class="flex-center">
+      <div class="main-movie_details flex-center">
         <div class="movie-poster">
-          <img
-            src="https://media.themoviedb.org/t/p/w600_and_h900_bestv2/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg"
-            alt=""
-          />
+          <canvas id="canvas" height="450" width="300"></canvas>
+          <img src="" width="300" height="227"   alt="" />
         </div>
         <div class="movie-details">
           <div class="movie-detail_header">
             <h2 class="movie-detail_header-h2 text-hover">
-              Poor Things <span class="movie-detail_header-year">(2023)</span>
+              <span class="movie-detail_header-year">(2023)</span>
             </h2>
           </div>
           <div class="movie-detail_facts flex-center">
-            <span class="certification">18+</span>
-            <span class="release">02/09/2024 (TR)</span>
+            <span class="certification"></span>
+            <span class="release"></span>
             <span class="detail-dot"></span>
-            <span class="genres"
-              ><span class="genre text-hover">Science Fiction</span>,
-              <span class="genre text-hover">Romance</span>,
-              <span class="genre text-hover">Comedy</span>
-            </span>
+            <span class="genres"> </span>
             <span class="detail-dot"></span>
-            <span class="runtime">2h 21m</span>
+            <span class="runtime"></span>
           </div>
           <div class="movie-detail_actions">
             <ul class="movie-detail_actions-list list-style flex-center">
-              <li class="flex-center link-style">
-                <div>circle</div>
+              <li class="tooltip_chart flex-center-between link-style">
+                <div class="outer-ring flex-center-center"></div>
                 <div class="user-score">
                   <p>User</p>
                   <p>Score</p>
@@ -304,7 +298,6 @@
                   </span>
                 </div>
               </li>
-
               <li class="tooltip tooltip_heart">
                 <i class="fa-solid fa-heart tooltip-icon">
                   <div class="display-none mark-favorite tooltip_hover">
@@ -356,7 +349,6 @@
                   </div>
                 </div>
               </li>
-
               <li class="tooltip_play flex-center text-hover">
                 <div class="play-trailer">
                   <i class="fa-solid fa-play"></i>
@@ -366,10 +358,47 @@
               </li>
             </ul>
           </div>
+          <div class="movie-detail_tagline">
+            <p class="movie-detail_tagline-text"></p>
+          </div>
+          <div class="movie-detail_overview">
+            <h3 class="movie-detail_overview-h3">Overview</h3>
+            <p class="movie-detail_overview-text"></p>
+          </div>
+          <div class="movie-detail_people">
+            <ul class="movie-detail_people-list list-style flex-center-between">
+              <li class="link-style profile">
+                <p class="people">
+                  <a href="#" class="people-link link-style"
+                    >Denis Villeneuve</a
+                  >
+                </p>
+                <p class="character">Director, Screenplay</p>
+              </li>
+              <li class="link-style profile">
+                <p class="people">
+                  <a href="#" class="people-link link-style">Frank Herbert</a>
+                </p>
+                <p class="character">Novel</p>
+              </li>
+              <li class="link-style profile">
+                <p class="people">
+                  <a href="#" class="people-link link-style">Jon Spaihts</a>
+                </p>
+                <p class="character">Screenplay</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.min.js"
+      integrity="sha512-r2yd2GP87iHAsf2K+ARvu01VtR7Bs04la0geDLbFlB/38AruUbA5qfmtXwXx6FZBQGJRogiPtEqtfk/fnQfaYA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="JS/service.js"></script>
     <script src="JS/config.js"></script>
     <script src="JS/sidebar.js"></script>

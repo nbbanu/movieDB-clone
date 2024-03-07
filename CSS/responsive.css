@@ -14,6 +14,14 @@
   .tmdb-navbar__right__menu li:not(.navbar-lang) {
     padding: 0 !important;
   }
+
+  .movie-detail_actions-list{
+    gap: 10px !important;
+  }
+  .movie-detail_facts {
+    gap: 5px !important;
+  }
+
 }
 @media only screen and (max-width: 800px) {
   .card__selector-dropdown{
@@ -75,6 +83,36 @@
     margin-bottom: 40px !important;
   }
 
+  /* movie detail page  */
+  .tooltip_chart{
+    width: 70px !important;
+  }
+  .tooltip_play{
+    margin-left: 30px !important;
+  }
+
 }
 @media only screen and (max-width: 500px) {
+  .shortcut_bar-list{
+    justify-content: space-between !important;
+    padding:0 20px;
+  }
+  .shortcut_bar-list li{
+    margin-right: 5px !important;
+  }
+  .main-movie_details{
+    display: flex;
+    flex-direction: column;
+    height: 190px !important;
+  }
+  .main-movie_details::after{
+    height: 190px !important;
+  }
+  .movie-poster img{
+    width: 97px !important;
+    height: 146px !important;
+  }
+  .tooltip{
+    display: none !important;
+  }
 }
