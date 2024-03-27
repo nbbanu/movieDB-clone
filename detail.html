@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="CSS/modal.css" />
     <link rel="stylesheet" href="CSS/sidebar.css" />
     <link rel="stylesheet" href="CSS/dropdown.css" />
-    <link rel="stylesheet" href="CSS/responsive.css" />
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/detail.css" />
+    <link rel="stylesheet" href="CSS/responsive.css" />
     <title>Document</title>
   </head>
   <body>
@@ -136,10 +136,10 @@
         </div>
 
         <div class="responsive-navbar__tmdb-logo">
-          <img
+          <a href="/"><img
             src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
             alt=""
-          />
+          /></a>
         </div>
         <div class="flex-center-between">
           <div class="responsive-navbar__user">
@@ -245,29 +245,35 @@
       </ul>
     </section>
     <section class="main-movie">
+      
       <div class="main-movie_details flex-center">
         <div class="movie-poster">
-          <canvas id="canvas" height="450" width="300"></canvas>
-          <img src="" width="300" height="227"   alt="" />
+          <img src="" alt="" />
         </div>
         <div class="movie-details">
           <div class="movie-detail_header">
-            <h2 class="movie-detail_header-h2 text-hover">
+            <a href="#" class="link-style"><h2 class="movie-detail_header-h2 text-hover">
               <span class="movie-detail_header-year">(2023)</span>
-            </h2>
+            </h2></a>
           </div>
-          <div class="movie-detail_facts flex-center">
-            <span class="certification"></span>
-            <span class="release"></span>
-            <span class="detail-dot"></span>
-            <span class="genres"> </span>
-            <span class="detail-dot"></span>
-            <span class="runtime"></span>
+          <div class="movie-detail_facts">
+            <div class="movie-detail_facts-resp-top flex-center">
+              <span class="certification"></span>
+              <span class="release"></span>
+              <span class="detail-dot"></span>
+              <span class="genres"> </span>
+              <span class="detail-dot"></span>
+              <span class="runtime"></span>
+            </div>
+            <div>
+              <span class="genres-responsive"> </span>
+            </div>
           </div>
           <div class="movie-detail_actions">
             <ul class="movie-detail_actions-list list-style flex-center">
               <li class="tooltip_chart flex-center-between link-style">
                 <div class="outer-ring flex-center-center"></div>
+               
                 <div class="user-score">
                   <p>User</p>
                   <p>Score</p>
@@ -366,7 +372,7 @@
             <p class="movie-detail_overview-text"></p>
           </div>
           <div class="movie-detail_people">
-            <ul class="movie-detail_people-list list-style flex-center-between">
+            <ul class="movie-detail_people-list list-style">
               <li class="link-style profile">
                 <p class="people">
                   <a href="#" class="people-link link-style"
@@ -392,13 +398,84 @@
         </div>
       </div>
     </section>
+    <div>
+      
+    </div>
+    <section class="">
+      <div class="container">
+        <div>
+          <div class="top-billed-cast">
+            <h3 class="section-header_h3">Top Billed Cast</h3>
+            <div class="people section__posters">
+              <div class="detail-section_card">
+                <div class="detail-section_card-img">
+                  <img src="https://media.themoviedb.org/t/p/w276_and_h350_face/rtxJfCCLdp1oi7bQ1ENVZRRkrJ5.jpg" alt="">
+                </div>
+                <a href="#" class="character link-style actor">Dakota</a>
+                <p class="character">Cassandra Web</p>
+              </div>
+              <div class="detail-section_card">
+                <div class="detail-section_card-img">
+                  <img src="https://media.themoviedb.org/t/p/w276_and_h350_face/rtxJfCCLdp1oi7bQ1ENVZRRkrJ5.jpg" alt="">
+                </div>
+                <a href="#" class="character link-style actor">Dakota</a>
+                <p class="character">Cassandra Web</p>
+              </div>
+            </div>
+            <a href="#" class="cast-link link-style">Full Cast & Crew</a>
+            
+          </div>
+          <div class="line"></div>
+          <div class="social-panel">
+            <div class="social-panel-menu"></div>
+            <div class="social-panel-content"></div>
+            <a href="#" class="cast-link link-style">Read All Reviews</a>
+          </div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </section>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.min.js"
-      integrity="sha512-r2yd2GP87iHAsf2K+ARvu01VtR7Bs04la0geDLbFlB/38AruUbA5qfmtXwXx6FZBQGJRogiPtEqtfk/fnQfaYA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <footer id="tmdb-footer" class="tmdb-footer">
+      <div class="footer__left">
+        <div class="tmdb-footer__logo">
+          <img
+            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+            alt="tmdb-footer__logo"
+            class="footer-logo"
+          />
+        </div>
+        <button class="footer__join-btn">FORUMA KATILIN</button>
+      </div>
+      <div class="footer__right">
+        <ul class="list-style">
+          <li class="link-style footer__list-header">TEMEL</li>
+          <li class="link-style">TMDB Hakkında</li>
+          <li class="link-style">Bize Ulaşın</li>
+          <li class="link-style">Destek Forumları</li>
+          <li class="link-style">API</li>
+          <li class="link-style">Sistem Durumu</li>
+        </ul>
+        <ul class="list-style">
+          <li class="link-style footer__list-header">KATKIDA BULUNUN</li>
+          <li class="link-style">Katılım Başvuru Kitabı</li>
+          <li class="link-style">Yeni Film Ekle</li>
+          <li class="link-style">Yeni Dizi Ekle</li>
+        </ul>
+        <ul class="list-style">
+          <li class="link-style footer__list-header">TOPLULUK</li>
+          <li class="link-style">Tartışmalar</li>
+          <li class="link-style">Öne Çıkanlar</li>
+        </ul>
+        <ul class="list-style">
+          <li class="link-style footer__list-header">YASAL</li>
+          <li class="link-style">Kullanım Koşulları</li>
+          <li class="link-style">API Kullanım Şartları</li>
+          <li class="link-style">Gizlilik Politikası</li>
+          <li class="link-style">DMCA Siyaseti</li>
+        </ul>
+      </div>
+    </footer>
     <script src="JS/service.js"></script>
     <script src="JS/config.js"></script>
     <script src="JS/sidebar.js"></script>

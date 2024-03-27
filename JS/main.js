@@ -138,9 +138,9 @@ async function loadTrailersToUI(type = "movie") {
       (item) =>
         `<div onmouseenter="changeBackground('${item.backdrop_path}')" 
         class="trailer__poster-card  fade">
-          <div  class="poster-card__img trailer-card-img">
-            <i class="fa-solid fa-play play-btn"
-            onclick="openTrailerModal('${item.id}','${item.title}')">
+          <div  class="poster-card__img trailer-card-img" 
+          onclick="openTrailerModal('${item.id}','${item.title}')">
+            <i class="fa-solid fa-play play-btn">
             </i>
               <img
                 src="${base_image_path + item.backdrop_path} "
@@ -190,8 +190,9 @@ function changeBackground(image) {
 async function openTrailerModal(id, title) {
   const data = await getTrailerVideos(id);
   const modal = document.querySelector(".modal");
-  document.querySelector(".modal__header__h2").innerHTML = title;
   const video = document.querySelector(".youtube-frame");
+
+  document.querySelector(".modal__header__h2").innerHTML = title;
 
   video.setAttribute('src', `https://www.youtube.com/embed/${data[0].key}`)
   modal.classList.add("open-modal");

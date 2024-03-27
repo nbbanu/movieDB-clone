@@ -9,6 +9,7 @@ const certification = document.querySelector(".certification");
 const releaseDate = document.querySelector(".release");
 const runtime = document.querySelector(".runtime");
 const genresArea = document.querySelector(".genres");
+const genresResponsive = document.querySelector(".genres-responsive");
 const tagline = document.querySelector(".movie-detail_tagline-text");
 const overview = document.querySelector(".movie-detail_overview-text");
 
@@ -56,14 +57,8 @@ async function loadMainMovieToMovieDetail(movieId) {
 
   overview.innerHTML = data.overview;
 
-  const canvas = document.getElementById("canvas");
-  const ctx = canvas.getContext("2d");
-
-  moviePoster.onload = () => {
-    ctx.drawImage(moviePoster, 0, 0, canvas.width, canvas.height);
-
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-    console.log(imageData);
-  };
+  genresResponsive.innerHTML = data.genres
+  .map(
+    type => `<span class="genre text-hover">${type.name}</span> `
+  ).join(", ");
 }

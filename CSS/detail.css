@@ -9,7 +9,6 @@
   margin-right: 40px;
   padding-bottom: 6px;
 }
-
 .shortcut_bar-list li:hover {
   opacity: 0.7;
 }
@@ -22,7 +21,8 @@
   background-position: left calc((50vw - 170px) - 340px) top;
   background-size: cover;
   isolation: isolate;
-  padding: 30px 40px;
+  padding: 30px 60px;
+  height: 510px;
 }
 .main-movie_details::after {
   position: absolute;
@@ -41,15 +41,14 @@
 }
 
 .movie-poster {
-  min-width: 300px;
   width: 300px;
-  min-height: 450px;
   height: 450px;
 }
 .movie-poster img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 5px;
 }
 .movie-details {
   width: 100%;
@@ -62,11 +61,13 @@
   cursor: pointer;
 }
 .movie-detail_facts {
-  gap: 10px;
   font-size: 16px;
   font-weight: 300px;
   color: #fff;
   margin-bottom: 10px;
+}
+.movie-detail_facts-resp-top{
+  gap: 10px;
 }
 .certification {
   border: 1px solid rgba(255, 255, 255, 0.6);
@@ -192,31 +193,79 @@
 .star i {
   font-size: 26px;
 }
-.movie-detail_tagline-text{
-    font-size: 18px;
-    color: rgba(255, 255, 255, .7);
-    font-style: italic;
-    font-weight: 400;
-    margin-top: 10px;
+.movie-detail_tagline-text {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 10px;
 }
-.movie-detail_overview-h3{
-    color: #fff;
-    font-size: 21px;
-    margin-top: 10px;
+.movie-detail_overview-h3 {
+  color: #fff;
+  font-size: 21px;
+  margin-top: 10px;
 }
-.movie-detail_overview-text{
-    color: #fff;
-    margin-top: 16px;
+.movie-detail_overview-text {
+  color: #fff;
+  margin-top: 16px;
 }
-.movie-detail_people-list{
-    width: 70%;
-    margin-top: 16px;
+.movie-detail_people-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 16px;
 }
-.people-link{
-    color: #fff;
-    font-weight: 700;
+.people-link {
+  color: #fff;
+  font-weight: 700;
 }
 .character {
-    color: #fff;
-    font-size: 14px;
+  color: #fff;
+  font-size: 14px;
+}
+/* ************** detail-bottom ***************** */
+.section-header_h3{
+  font-weight: 600;
+  font-size: 22.4px;
+}
+.top-billed-cast .section__posters{
+  margin-left: 0;
+}
+.detail-section_card{
+  width: 138px;
+  height: 255px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  border-radius: 8px;
+}
+.detail-section_card-img{
+  width: 100%;
+  height: 175px;
+}
+.detail-section_card-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.detail-section_card .character{
+  padding-left: 10px;
+  color: #000;
+}
+.detail-section_card .character:nth-child(even){
+  font-weight: 600;
+  font-size: 16px;
+  padding-top: 10px;
+}
+.cast-link{
+  display: inline-flex;
+  font-size: 17.6px;
+  font-weight: 600;
+  padding-top: 30px ;
+  padding-bottom: 30px;
+  color: #000;
+}
+.cast-link:hover{
+  opacity: .5;
 }

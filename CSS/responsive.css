@@ -1,118 +1,178 @@
 @media only screen and (max-width: 1400px) {
   .container {
-    width: 100% !important;
+    width: 100%;
   }
   #tmdb-navbar {
-    padding: 12px 27px !important;
+    padding: 12px 27px;
   }
   .tmdb-navbar {
-    width: 100% !important;
+    width: 100%;
+  }
+  .genres-responsive{
+    display: none;
   }
 }
 @media only screen and (max-width: 960px) {
   .tmdb-navbar__left__menu li,
   .tmdb-navbar__right__menu li:not(.navbar-lang) {
-    padding: 0 !important;
+    padding: 0;
   }
 
-  .movie-detail_actions-list{
-    gap: 10px !important;
+  .movie-detail_actions-list {
+    gap: 10px;
   }
   .movie-detail_facts {
-    gap: 5px !important;
+    gap: 5px;
   }
-
 }
 @media only screen and (max-width: 800px) {
-  .card__selector-dropdown{
-    display: flex !important;
+  .card__selector-dropdown {
+    display: flex;
   }
-  .dropdown-menu{
-    width: 130px !important;
+  .dropdown-menu {
+    width: 130px;
 
-    background: linear-gradient(to right,rgba(192,254,207,1) 0%,rgba(0,213,169,1) 100%);
+    background: linear-gradient(
+      to right,
+      rgba(192, 254, 207, 1) 0%,
+      rgba(0, 213, 169, 1) 100%
+    );
   }
-  .dropdown-link{
-    font-weight: 600 !important;
-    font-size: 16px !important;
+  .dropdown-link {
+    font-weight: 600;
+    font-size: 16px;
   }
-  .dropdown-link:hover:not(.lang-link){
-    background-color: transparent !important;
+  .dropdown-link:hover:not(.lang-link) {
+    background-color: transparent;
   }
-  .dropdown-none{
-    display: none !important;
+  .dropdown-none {
+    display: none;
   }
-  .display-none{
-    display: flex !important;
+  .display-none {
+    display: flex;
   }
-  
-  .tmdb-navbar, .tmdb-footer__logo{
-    display: none !important;
+
+  .tmdb-navbar,
+  .tmdb-footer__logo {
+    display: none;
   }
   .join__bottom {
-    display: flex !important;
+    display: flex;
     flex-direction: column;
   }
   .leaderboards {
-    padding: 30px 20px !important;
+    padding: 30px 20px;
   }
-  .leaderbord{
-    grid-template-columns: repeat(1, 1fr) !important;
+  .leaderbord {
+    grid-template-columns: repeat(1, 1fr);
   }
-  .section__header{
-    margin-left: 20px !important;
+  .section__header {
+    margin-left: 20px;
   }
-  .section__posters{
-    margin-left: 20px !important;
+  .section__posters {
+    margin-left: 20px;
   }
-  
-  .tmdb-footer{
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
+
+  .tmdb-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding-left: 20px;
   }
-  .footer__join-btn{
-    margin-bottom: 40px !important;
+  .footer__join-btn {
+    margin-bottom: 40px;
   }
-  .footer__right{
-    display: flex !important;
-    flex-direction: column !important;
+  .footer__right {
+    display: flex;
+    flex-direction: column;
   }
-  .footer__right ul{
-    margin-bottom: 40px !important;
+  .footer__right ul {
+    margin-bottom: 40px;
   }
 
   /* movie detail page  */
-  .tooltip_chart{
-    width: 70px !important;
+  .tooltip_chart {
+    width: 70px;
   }
-  .tooltip_play{
-    margin-left: 30px !important;
+  .tooltip_play {
+    margin-left: 30px;
   }
-
 }
 @media only screen and (max-width: 500px) {
-  .shortcut_bar-list{
-    justify-content: space-between !important;
-    padding:0 20px;
+  .modal {
+    height: 50vh;
   }
-  .shortcut_bar-list li{
-    margin-right: 5px !important;
+
+  /* detail page  */
+  .shortcut_bar-list {
+    justify-content: space-between;
+    padding: 0 20px;
   }
-  .main-movie_details{
+  .shortcut_bar-list li {
+    margin-right: 5px;
+    margin-top: 5px;
+  }
+  .main-movie_details {
     display: flex;
     flex-direction: column;
-    height: 190px !important;
+    align-items: flex-start;
+    height: 190px;
+    padding: 0;
   }
   .main-movie_details::after{
-    height: 190px !important;
+    height: 190px;
   }
-  .movie-poster img{
-    width: 97px !important;
-    height: 146px !important;
+  .movie-details {
+    width: 100%;
+    padding: 20px;
+    background: rgb(157, 178, 200);
+    margin-top: 22px;
   }
-  .tooltip{
-    display: none !important;
+  .movie-poster {
+    margin: 20px 0 0 20px;
+    width: 97px;
+    height: 146px;
   }
+  .tooltip {
+    display: none;
+  }
+  .movie-detail_header-h2 {
+    font-size: 23px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 15px;
+  }
+  .movie-detail_facts {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .detail-dot:nth-of-type(3), .genres{
+    display: none;
+  } 
+  .genres-responsive{
+    display: flex;
+  }
+  .movie-detail_facts-resp-top{
+    gap: 5px;
+  }
+  .movie-detail_actions-list{
+    padding-top: 20px;
+    justify-content: center;
+  }
+  .tooltip_chart{
+    width: 110px;
+  }
+  .movie-detail_people-list{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
 }
